@@ -24,9 +24,7 @@ use fkooman\Http\Session;
 use fkooman\Http\Exception\InternalServerErrorException;
 use fkooman\Config\Reader;
 use fkooman\Config\YamlFile;
-use fkooman\Rest\Service;
-use fkooman\Http\Request;
-use fkooman\Rest\Plugin\Authentication\UserInfoInterface;
+use fkooman\IndieCert\Demo\DemoService;
 
 try {
     $reader = new Reader(
@@ -62,31 +60,7 @@ try {
         )
     );
 
-    $service = new Service();
-    $service->get(
-        '/',
-        function (Request $request) use ($templateManager) {
-            return $templateManager->render('index', array());
-        },
-        array(
-            'fkooman\Rest\Plugin\Authentication\AuthenticationPlugin' => array(
-                'enabled' => false,
-            ),
-        )
-    );
-
-    $service->get(
-        '/secret',
-        function (Request $request, UserInfoInterface $userInfo) use ($templateManager) {
-            return $templateManager->render(
-                'secret',
-                array(
-                    'userId' => $userInfo->getUserId(),
-                )
-            );
-        }
-    );
-
+    $service = new DemoService($templateManager);
     $authenticationPlugin = new AuthenticationPlugin();
     $indieAuth = new IndieAuthAuthentication($templateManager, $client, $session);
     $authenticationPlugin->register($indieAuth, 'indieauth');

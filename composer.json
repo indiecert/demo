@@ -5,7 +5,12 @@
             "name": "Fran\u00e7ois Kooman"
         }
     ],
-    "name": "fkooman/indiecert-demo",
+    "autoload": {
+        "psr-0": {
+            "fkooman\\IndieCert\\Demo\\": "src/"
+        }
+    },
+    "name": "indiecert/demo",
     "require": {
         "fkooman/config": "^1.0",
         "fkooman/http": "^1.0",
