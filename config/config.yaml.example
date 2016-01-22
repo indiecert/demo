@@ -1,1 +1,2 @@
+#serverMode: development
 serverMode: production
