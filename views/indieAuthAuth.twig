@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="en">
+{% include 'head.twig' %}
+<body>
+    {% include 'header.twig' %}
+
+    <h2>Authenticate</h2>
+
+    <p>Please sign in with your domain name.</p>
+
+    <form method="post" action="_auth/indieauth/auth">
+        <fieldset>
+            <legend>Authenticate</legend>
+            <label for="me">Domain</label>
+            <input type="text" id="me" name="me" value="{{ login_hint|e }}" placeholder="example.org" autofocus required>
+            <input type="hidden" name="redirect_to" value="{{ _auth_indieauth_root_url|e }}secret">
+            <button type="submit">Sign In</button>
+        </fieldset>
+    </form>
+
+    {% include 'footer.twig' %}
+
+</body>
+</html>
+
