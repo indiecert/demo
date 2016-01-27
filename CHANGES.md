@@ -1,6 +1,6 @@
 # Changes
 
-## 1.0.2 (...)
+## 1.0.2 (2016-01-27)
 - update CSS
 - add some workflow documentation on index page
 - add ability to disable discovery
