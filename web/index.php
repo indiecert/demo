@@ -63,6 +63,12 @@ try {
     $service = new DemoService($templateManager);
     $authenticationPlugin = new AuthenticationPlugin();
     $indieAuth = new IndieAuthAuthentication($templateManager, $client, $session);
+
+    $authenticationEndpoint = $reader->v('authenticationEndpoint', false);
+    // if authentication endpoint is set, use it instead of discovery
+    if (!is_null($authenticationEndpoint)) {
+        $indieAuth->setAuthUri($authenticationEndpoint);
+    }
     $authenticationPlugin->register($indieAuth, 'indieauth');
     $service->getPluginRegistry()->registerDefaultPlugin($authenticationPlugin);
     $service->run()->send();

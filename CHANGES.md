@@ -1,7 +1,9 @@
 # Changes
 
 ## 1.0.2 (...)
-- reduce default page width
+- update CSS
+- add some workflow documentation on index page
+- add ability to disable discovery
 
 ## 1.0.1 (2016-01-22)
 - add configuration file

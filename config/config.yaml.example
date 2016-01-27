@@ -1,2 +1,6 @@
 #serverMode: development
 serverMode: production
+
+# the authentication endpoint to use, disabling this 
+# will enable discovery
+#authenticationEndpoint: 'https://indiecert.net/auth'
