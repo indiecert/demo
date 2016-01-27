@@ -1,5 +1,8 @@
 # Changes
 
+## 1.0.3 (2016-01-27)
+- update default config template
+
 ## 1.0.2 (2016-01-27)
 - update CSS
 - add some workflow documentation on index page

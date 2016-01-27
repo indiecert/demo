@@ -1,6 +1,9 @@
-#serverMode: development
+# set the server mode (production|development)
 serverMode: production
 
-# the authentication endpoint to use, disabling this 
-# will enable discovery
-#authenticationEndpoint: 'https://indiecert.net/auth'
+# Uncomment this line below to enable Twig template caching
+#templateCache: /var/lib/indiecert-demo/tpl
+
+# setting this will force IndieCert at this URL to be 
+# used instead of using IndieAuth discovery
+authenticationEndpoint: 'https://indiecert.example/auth'
